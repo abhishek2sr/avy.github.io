@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+<html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2927QHM9HV"></script>
@@ -10,11 +10,131 @@
 
   gtag('config', 'G-2927QHM9HV');
 </script>
-  
-  <title>Practice Site</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome, Baby!</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      height: 100%;
+      width: 100%;
+    }
+
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1519861531411-b2bb06f17d94?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      text-align: center;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+
+    .enter-btn {
+      background-color: #ffb6c1;
+      color: #fff;
+      border: none;
+      padding: 15px 35px;
+      font-size: 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      background-color: #ff69b4;
+    }
+
+    #mainContent {
+      display: none;
+      padding: 40px;
+      animation: fadeIn 1s ease forwards;
+      background-color: #fff0f5;
+      min-height: 100vh;
+      color: #444;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 {
+      color: #ff69b4;
+    }
+
+    .baby-icons {
+      font-size: 30px;
+      margin: 20px 0;
+    }
+
+    .baby-photo {
+      max-width: 200px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      #mainContent {
+        padding: 20px;
+      }
+
+      .enter-btn {
+        font-size: 18px;
+        padding: 12px 25px;
+      }
+
+      #splash h1 {
+        font-size: 26px;
+        padding: 0 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to the AI Domain!</h1>
-  <p>Practice Page</p>
+
+  <div id="splash">
+    <h1>Welcome to Baby's World! 👶</h1>
+    <p>We're so excited to introduce our little bundle of joy 💕</p>
+    <button class="enter-btn" onclick="enterSite()">Meet the Baby</button>
+  </div>
+
+  <div id="mainContent">
+    <h2>🎉 Meet Baby Olivia Grace</h2>
+    <p>Born on: <strong>March 24, 2025</strong></p>
+    <p>Weight: <strong>7 lbs 2 oz</strong> | Length: <strong>19.5 inches</strong></p>
+
+    <div class="baby-icons">🍼 🎀 🧸 👣</div>
+
+    <p>She's already captured our hearts with her tiny fingers, sleepy yawns, and angelic smile.</p>
+
+    <img class="baby-photo" src="https://images.unsplash.com/photo-1599940824399-b87987ceb5ef?auto=format&fit=crop&w=400&q=80" alt="Baby image">
+
+    <p>Thank you for sharing in our joy!</p>
+  </div>
+
+  <script>
+    function enterSite() {
+      document.getElementById('splash').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+    }
+  </script>
+
 </body>
 </html>
