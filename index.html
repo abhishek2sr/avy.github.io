@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome, Baby Noah!</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2927QHM9HV"></script>
   <script>
@@ -14,7 +14,7 @@
     gtag('js', new Date());
     gtag('config', 'G-2927QHM9HV');
   </script>
-
+  
   <style>
     body {
       margin: 0;
@@ -35,32 +35,6 @@
       color: white;
       text-shadow: 0 2px 5px rgba(0,0,0,0.4);
       z-index: 999;
-    }
-
-    #splash h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    #splash p {
-      font-size: 1.2rem;
-    }
-
-    .enter-btn {
-      background-color: #89cff0;
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      margin-top: 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: background 0.3s;
-    }
-
-    .enter-btn:hover {
-      background-color: #5dade2;
     }
 
     #passwordOverlay {
@@ -100,90 +74,91 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .section {
-      margin: 40px 0;
-    }
-
-    .section h2 {
-      color: #4682b4;
-      margin-bottom: 10px;
-    }
-
     .baby-photo {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin: 20px 0;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Optional styling */
     }
 
-    .timeline {
-      background: #d0ebff;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .timeline p {
-      margin: 10px 0;
+    .section {
+      margin-bottom: 40px;
     }
 
     footer {
-      margin-top: 50px;
       text-align: center;
-      color: #999;
+      margin-top: 20px;
       font-size: 14px;
+      color: #555;
     }
 
-    @media (max-width: 600px) {
-      #splash h1 {
-        font-size: 2rem;
-      }
+    .button {
+      background-color: #f9a8d4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-      .enter-btn {
-        padding: 12px 24px;
-        font-size: 16px;
-      }
+    .button:hover {
+      background-color: #f06a91;
     }
   </style>
 </head>
-<body>
 
-  <!-- Password Prompt -->
+<body>
   <div id="passwordOverlay">
     <div id="passwordForm">
       <h2>Enter Password</h2>
       <input type="password" id="passwordInput" placeholder="Enter password" />
-      <button class="enter-btn" onclick="validatePassword()">Submit</button>
+      <button class="button" onclick="validatePassword()">Submit</button>
     </div>
   </div>
 
-  <!-- Main Content (Initially Hidden) -->
   <div id="splash" style="display:none;">
     <h1>Welcome to Noah's World! 👶</h1>
     <p>Born to make our hearts full 💙</p>
-    <button class="enter-btn" onclick="enterSite()">Enter</button>
+    <button class="button" onclick="enterSite()">Enter</button>
   </div>
 
-  <!-- Main Content (After Password Validation) -->
   <div id="mainContent">
+    <!-- About Baby Noah -->
     <div class="section">
       <h2>👶 Meet Baby Noah</h2>
       <p><strong>Born:</strong> April 14, 2025</p>
       <p><strong>Weight:</strong> 8 lbs 4 oz</p>
       <p><strong>Length:</strong> 20 inches</p>
+      <p><strong>Fun Fact:</strong> Noah loves cuddles and is already giving the best baby smiles! 😊</p>
       <img class="baby-photo" src="https://images.unsplash.com/photo-1595433562696-ea6f015cac5a?auto=format&fit=crop&w=800&q=80" alt="Baby Noah sleeping peacefully">
     </div>
 
+    <!-- Gallery Section -->
     <div class="section">
       <h2>📸 Gallery</h2>
-      <p>More photos coming soon… capturing every giggle, yawn, and cuddle.</p>
+      <p>Here are some of the sweetest moments with Noah!</p>
+      <div class="gallery">
+        <img class="baby-photo" src="https://images.unsplash.com/photo-1595433562696-ea6f015cac5a?auto=format&fit=crop&w=800&q=80" alt="Noah smiling" />
+        <!-- Add more photos here -->
+      </div>
     </div>
 
-    <div class="section timeline">
-      <h2>📅 Our Journey Begins</h2>
-      <p>💙 First heartbeat heard: August 2024</p>
-      <p>💙 First kick: November 2024</p>
-      <p>💙 Born on a beautiful morning: April 14, 2025</p>
+    <!-- Milestones Section -->
+    <div class="section">
+      <h2>📅 Milestones</h2>
+      <ul>
+        <li><strong>First Smile:</strong> May 1, 2025</li>
+        <li><strong>First Crawl:</strong> May 10, 2025</li>
+        <li><strong>First Word:</strong> Coming Soon!</li>
+      </ul>
+    </div>
+
+    <!-- Family & Friends -->
+    <div class="section">
+      <h2>👨‍👩‍👧‍👦 Family & Friends</h2>
+      <p>Message us and leave your well-wishes for Baby Noah!</p>
+      <!-- Optional: Comments section or guestbook -->
     </div>
 
     <footer>
@@ -195,7 +170,6 @@
     function validatePassword() {
       const enteredPassword = document.getElementById("passwordInput").value;
       const correctPassword = "Noah2025"; // Change this password to whatever you want
-
       if (enteredPassword === correctPassword) {
         // Hide password overlay and show main content
         document.getElementById("passwordOverlay").style.display = "none";
@@ -210,6 +184,5 @@
       document.getElementById("mainContent").style.display = "block";
     }
   </script>
-
 </body>
 </html>
