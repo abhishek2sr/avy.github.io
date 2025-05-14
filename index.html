@@ -12,7 +12,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-2927QHM9HV');
   </script>
 
@@ -149,6 +148,7 @@
 </head>
 <body>
 
+  <!-- Password Prompt -->
   <div id="passwordOverlay">
     <div id="passwordForm">
       <h2>Enter Password</h2>
@@ -157,12 +157,14 @@
     </div>
   </div>
 
+  <!-- Main Content (Initially Hidden) -->
   <div id="splash" style="display:none;">
     <h1>Welcome to Noah's World! 👶</h1>
     <p>Born to make our hearts full 💙</p>
     <button class="enter-btn" onclick="enterSite()">Enter</button>
   </div>
 
+  <!-- Main Content (After Password Validation) -->
   <div id="mainContent">
     <div class="section">
       <h2>👶 Meet Baby Noah</h2>
@@ -195,6 +197,7 @@
       const correctPassword = "Noah2025"; // Change this password to whatever you want
 
       if (enteredPassword === correctPassword) {
+        // Hide password overlay and show main content
         document.getElementById("passwordOverlay").style.display = "none";
         document.getElementById("splash").style.display = "block";
       } else {
@@ -203,4 +206,10 @@
     }
 
     function enterSite() {
-      document.get
+      document.getElementById("splash").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
