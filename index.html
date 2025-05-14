@@ -1,16 +1,14 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2927QHM9HV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2927QHM9HV');
-</script>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2927QHM9HV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2927QHM9HV');
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -131,8 +129,15 @@
 
   <script>
     function enterSite() {
-      document.getElementById('splash').style.display = 'none';
-      document.getElementById('mainContent').style.display = 'block';
+      const userPassword = prompt("Enter the password to continue:");
+      const correctPassword = "avy2025"; // 🔒 CHANGE THIS PASSWORD
+
+      if (userPassword === correctPassword) {
+        document.getElementById('splash').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+      } else {
+        alert("Incorrect password. Please try again.");
+      }
     }
   </script>
 
